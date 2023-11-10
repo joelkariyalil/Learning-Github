@@ -13,7 +13,7 @@ git rebase origin
 git stash pop
 git add .
 git commit -m "%message%"
-git push origin "%branch%" --force
+git push origin "%branch%"
 
 
 :: Display a "Press any key to continue..." message

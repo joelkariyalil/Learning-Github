@@ -2,9 +2,12 @@
 
 :: Read the contents of config.txt and assign them to variables
 for /f "tokens=*" %%A in (config.txt) do (
-    set "message=%%A"
+    set "work_dir=%%A"
     set "branch=%%A"
 )
+
+:: Change the working directory
+cd /d "%work_dir%"
 
 :: Execute Git commands with the read values
 git stash

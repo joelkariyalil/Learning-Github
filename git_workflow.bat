@@ -28,3 +28,6 @@ del "%temp%\comment.txt"
 
 git commit -m "%message%"
 git push origin "%branch%"
+
+:: Display a "Press any key to continue..." message
+pause

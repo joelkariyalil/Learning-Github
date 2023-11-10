@@ -1,11 +1,3 @@
 sddsfsdsfdsf asasd
 Joel Thomas Chacko is my name
-
-
-<<<<<<< Updated upstream
-Great! s
-=======
-Great!
-
-Awesome
->>>>>>> Stashed changes
+Great!!!

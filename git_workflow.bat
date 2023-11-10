@@ -7,7 +7,7 @@ set "branch="
 set /a line_count=0
 
 :: Process config1.txt
-for /f "usebackq delims=" %%A in (config1.txt) do (
+for /f "usebackq delims=" %%A in (config.txt) do (
     set /a line_count+=1
     if !line_count! equ 1 set "work_dir=%%~A"
     if !line_count! equ 2 set "branch=%%A"
@@ -26,7 +26,7 @@ if not exist "%work_dir%" (
 :: Change the working directory
 
 cd /d "%work_dir%"
-
+echo "in the right directory"
 :: Execute Git commands with the read values
 git stash
 git fetch origin

@@ -27,7 +27,5 @@ git add .
 
 set /p message=Enter Comment: 
 
-git commit -m "%message%"
+git commit -m "Previous Versions"
 git push origin "%branch%"
-
-pause

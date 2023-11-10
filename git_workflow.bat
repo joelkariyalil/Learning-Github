@@ -1,12 +1,30 @@
 @echo off
+setlocal enabledelayedexpansion
 
-:: Read the contents of config.txt and assign them to variables
-for /f "tokens=*" %%A in (config.txt) do (
-    set "work_dir=%%A"
-    set "branch=%%A"
+:: Read the contents of config1.txt and assign them to variables
+set "work_dir="
+set "branch="
+set /a line_count=0
+
+:: Process config1.txt
+for /f "usebackq delims=" %%A in (config1.txt) do (
+    set /a line_count+=1
+    if !line_count! equ 1 set "work_dir=%%~A"
+    if !line_count! equ 2 set "branch=%%A"
+)
+
+echo "Work Directory: !work_dir!"
+echo "Branch: !branch!"
+
+:: Check if directory exists
+if not exist "%work_dir%" (
+    echo Error: Directory does not exist - "%working_directory%"
+    pause
+    exit /b 1
 )
 
 :: Change the working directory
+
 cd /d "%work_dir%"
 
 :: Execute Git commands with the read values

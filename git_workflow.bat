@@ -3,12 +3,15 @@ setlocal enabledelayedexpansion
 
 set "work_dir="
 set "branch="
+set "comment="
+
 set /a line_count=0
 
 for /f "usebackq delims=" %%A in (config.txt) do (
     set /a line_count+=1
     if !line_count! equ 1 set "work_dir=%%~A"
     if !line_count! equ 2 set "branch=%%A"
+	if !line_count! equ 2 set "comment=%%A"
 )
 
 if not exist "%work_dir%" (
@@ -25,7 +28,5 @@ git rebase origin
 git stash pop
 git add .
 
-set /p message=Enter Comment: 
-
-git commit -m "Previous Versions"
+git commit -m "%comment%"
 git push origin "%branch%"

@@ -7,8 +7,10 @@ for /f "tokens=*" %%A in (config.txt) do (
 )
 
 :: Execute Git commands with the read values
+git stash
 git fetch origin
 git rebase origin
+git stash pop
 git add .
 git commit -m "%message%"
 git push origin "%branch%" --force

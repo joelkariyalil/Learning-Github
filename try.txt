@@ -1,2 +1,6 @@
+<<<<<<< Updated upstream
 Joel Thomas Chacko is my name
 This should be changed!
+=======
+fksjbfskjbfksfsd ssd
+>>>>>>> Stashed changes

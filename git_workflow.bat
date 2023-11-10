@@ -12,3 +12,7 @@ git rebase origin
 git add .
 git commit -m "%message%"
 git push origin "%branch%" --force
+
+
+:: Display a "Press any key to continue..." message
+pause
